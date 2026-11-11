@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace ISBNLab\Onix\Tests\Unit;
 
 use ISBNLab\Onix\CodeList\ArrayCodeLists;
+use ISBNLab\Onix\CodeList\BundledCodeLists;
 use ISBNLab\Onix\CodeList\EditeurCodeLists;
+use ISBNLab\Onix\CodeList\EditeurDownload;
 use ISBNLab\Onix\CodeList\NoCodeLists;
 use ISBNLab\Onix\Exception\OnixException;
 use ISBNLab\Onix\OnixReader;
@@ -83,11 +85,57 @@ final class CodeListsTest extends TestCase
         self::assertSame('Test: hardback', $onix21->productForm->label);
     }
 
-    public function testNoLabelsByDefault(): void
+    public function testBundledLabelsByDefault(): void
     {
         $product = iterator_to_array(OnixReader::open(__DIR__ . '/../Fixtures/onix30-reference.xml'))[1];
-        self::assertNull($product->productForm?->label);
+
+        self::assertSame('Paperback / softback', $product->productForm?->label);
+        self::assertSame('ISBN-13', $product->identifiers[1]->type?->label);
+    }
+
+    public function testBundledFileIsEditeurs(): void
+    {
+        $bundled = new BundledCodeLists();
+
+        self::assertGreaterThanOrEqual(75, $bundled->issue());
+        self::assertStringEndsWith('_Issue_' . $bundled->issue() . '.json', BundledCodeLists::path());
+        self::assertSame('By (author)', $bundled->label(17, 'A01'));
+        self::assertSame('Main content page count', $bundled->label(23, '00'));
+        self::assertNull($bundled->label(150, 'not a code'));
+        self::assertFileExists(BundledCodeLists::DIRECTORY . '/README.md');
+        self::assertStringContainsString('not cover this file', (string) file_get_contents(BundledCodeLists::DIRECTORY . '/README.md'));
+    }
+
+    public function testNoCodeListsGivesNoLabels(): void
+    {
+        $options = new ReaderOptions(codeLists: new NoCodeLists());
+        $product = iterator_to_array(OnixReader::open(__DIR__ . '/../Fixtures/onix30-reference.xml', $options))[1];
+
+        self::assertSame('BC', $product->productForm?->value);
+        self::assertNull($product->productForm->label);
         self::assertNull((new NoCodeLists())->issue());
+    }
+
+    public function testFindsTheNewestIssueOnEditeursPage(): void
+    {
+        $html = <<<'HTML'
+            <a href="/files/ONIX for books - code lists/ONIX_BookProduct_Codelists_Issue_74_Changes.pdf">74</a>
+            <a href="/files/ONIX for books - code lists/ONIX_BookProduct_Codelists_Issue_9.json">old</a>
+            <a href="/files/ONIX for books - code lists/ONIX_BookProduct_Codelists_Issue_75.json">JSON</a>
+            <a href="/files/ONIX for books - code lists/ONIX_BookProduct_Codelists_Issue_75.xml">XML</a>
+            <a href="/files/ONIX for books - code lists/ONIX_BookProduct_Codelist_Structure.json">schema</a>
+            HTML;
+
+        self::assertSame(
+            [75, 'https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.json'],
+            EditeurDownload::latestJsonUrl($html),
+        );
+    }
+
+    public function testNoIssueLinkIsAnError(): void
+    {
+        $this->expectException(OnixException::class);
+        EditeurDownload::latestJsonUrl('<p>Page moved</p>');
     }
 
     public function testRejectsOtherFiles(): void

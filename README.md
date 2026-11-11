@@ -19,7 +19,7 @@ and real feeds still mix ONIX 3.0, 3.1 and 2.1, reference names and short tags.
   languages, extents, subjects (BISAC, Thema, keywords), texts, publisher and imprint, dates and
   status, form and measurements, sales rights, supply details and prices, related products and
   works, collections and series, cover and other resource links
-- Every coded value keeps its code list number, and gets EDItEUR's label when you load the code lists
+- Every coded value keeps its code list number and value, and gets EDItEUR's label from the code lists included in the package
 - Unknown elements are ignored; bad records are reported and skipped, not fatal
 - No framework dependency; PHP 8.1 or later with the standard `dom`, `libxml` and `xmlreader` extensions
 
@@ -74,26 +74,34 @@ value is a `Code` holding the list number, the value and, when available, the la
 ```php
 $product->productForm->list;   // 150
 $product->productForm->value;  // "BC"
-$product->productForm->label;  // "Paperback / softback", once code lists are loaded
+$product->productForm->label;  // "Paperback / softback"
 $product->productForm->is('BB', 'BC'); // true
 ```
 
-The code lists are EDItEUR's copyright and are not bundled with this package. To get labels,
-download the current issue as JSON or XML from the
-[EDItEUR code lists page](https://www.editeur.org/14/Code-Lists/), then either load it directly:
+The labels come from EDItEUR's code lists, included unchanged in
+[data/codelists](data/codelists) (currently Issue 75). They are EDItEUR's copyright, used under
+[EDItEUR's licence](https://doi.org/10.4400/nwgj), not the MIT License; see that folder's README.
+They are read once, the first time a label is needed.
+
+To skip labels, or to use a different issue:
 
 ```php
 use ISBNLab\Onix\CodeList\EditeurCodeLists;
+use ISBNLab\Onix\CodeList\NoCodeLists;
 use ISBNLab\Onix\ReaderOptions;
 
-$options = new ReaderOptions(codeLists: EditeurCodeLists::fromFile('ONIX_BookProduct_Codelists_Issue_75.json'));
-$reader = OnixReader::open('feed.xml', $options);
+// No labels: codes only.
+$reader = OnixReader::open('feed.xml', new ReaderOptions(codeLists: new NoCodeLists()));
+
+// A file you downloaded from https://www.editeur.org/14/Code-Lists/
+$options = new ReaderOptions(codeLists: EditeurCodeLists::fromFile('ONIX_BookProduct_Codelists_Issue_76.json'));
 ```
 
-or compile it once into a PHP file, which loads faster and is cached by OPcache:
+`EditeurDownload::latestInto($directory)` downloads the newest issue from EDItEUR for you. A
+downloaded file can also be compiled into a PHP file, which OPcache keeps in memory:
 
 ```bash
-vendor/bin/onix-codelists ONIX_BookProduct_Codelists_Issue_75.json var/onix-codelists.php
+vendor/bin/onix-codelists ONIX_BookProduct_Codelists_Issue_76.json var/onix-codelists.php
 ```
 
 ```php
@@ -102,8 +110,8 @@ use ISBNLab\Onix\CodeList\ArrayCodeLists;
 $options = new ReaderOptions(codeLists: ArrayCodeLists::fromPhpFile('var/onix-codelists.php'));
 ```
 
-EDItEUR updates the lists quarterly; regenerate the file when a new issue comes out. You can
-also implement the `CodeLists` interface yourself, for example to translate labels.
+EDItEUR publishes a new issue about four times a year, and new releases of this package include
+it. You can also implement the `CodeLists` interface yourself, for example to translate labels.
 
 ## Bad records and broken files
 
@@ -198,6 +206,7 @@ feeds to the repository.
 Maintained by [ISBNLab, the book metadata API](https://www.isbnlab.com/). Released under the
 [MIT License](LICENSE).
 
-ONIX is a standard of [EDItEUR](https://www.editeur.org/). ONIX element names and code values
-are used under [EDItEUR's licence](https://doi.org/10.4400/nwgj) to implement the standard; this
-project is not affiliated with or endorsed by EDItEUR. See [NOTICE](NOTICE).
+ONIX is a standard of [EDItEUR](https://www.editeur.org/). ONIX element names, code values and the
+code lists in `data/codelists` are used under [EDItEUR's licence](https://doi.org/10.4400/nwgj); the
+code lists are EDItEUR's copyright and are not covered by the MIT License. This project is not
+affiliated with or endorsed by EDItEUR. See [NOTICE](NOTICE).

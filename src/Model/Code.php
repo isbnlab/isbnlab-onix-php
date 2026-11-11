@@ -7,7 +7,7 @@ namespace ISBNLab\Onix\Model;
 use Stringable;
 
 /**
- * A value from an EDItEUR code list, with its label when code lists are loaded.
+ * A value from an EDItEUR code list, with its label.
  */
 final class Code implements Stringable
 {
@@ -16,7 +16,7 @@ final class Code implements Stringable
         public readonly int $list,
         /** The code as it appears in the feed, for example "15". */
         public readonly string $value,
-        /** EDItEUR's description of the code, or null if code lists are not loaded or the code is unknown. */
+        /** EDItEUR's description of the code, or null if the code is not in the code lists used. */
         public readonly ?string $label = null,
     ) {}
 

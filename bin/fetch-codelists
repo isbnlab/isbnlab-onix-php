@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+/*
+ * Replaces the code lists in data/codelists with the newest issue on EDItEUR's
+ * code lists page (https://www.editeur.org/14/Code-Lists/). Run it when EDItEUR
+ * publishes a new issue, then run the tests and commit the new file.
+ *
+ *   bin/fetch-codelists
+ */
+
+use ISBNLab\Onix\CodeList\BundledCodeLists;
+use ISBNLab\Onix\CodeList\EditeurDownload;
+use ISBNLab\Onix\Exception\OnixException;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$directory = BundledCodeLists::DIRECTORY;
+
+try {
+    [$issue, $path] = EditeurDownload::latestInto($directory);
+} catch (OnixException $e) {
+    fwrite(STDERR, $e->getMessage() . "\n");
+    exit(1);
+}
+
+foreach (glob($directory . '/ONIX_BookProduct_Codelists_Issue_*.json') ?: [] as $file) {
+    if (realpath($file) !== realpath($path)) {
+        unlink($file);
+        fwrite(STDOUT, 'Removed ' . basename($file) . "\n");
+    }
+}
+fwrite(STDOUT, sprintf("Saved issue %d as %s\n", $issue, basename($path)));

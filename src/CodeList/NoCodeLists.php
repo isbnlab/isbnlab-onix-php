@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace ISBNLab\Onix\CodeList;
 
 /**
- * The default: codes are read, but carry no labels. See the README for loading
- * EDItEUR's code lists.
+ * No labels: codes are read with their list number and value only. Pass it in
+ * ReaderOptions to skip loading the bundled code lists.
  */
 final class NoCodeLists implements CodeLists
 {

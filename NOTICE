@@ -8,7 +8,9 @@ EDItEUR standard and are used under the Licence to use EDItEUR Standards
 (https://doi.org/10.4400/nwgj). That licence, not the MIT License, governs the
 standard itself.
 
-This package does not include EDItEUR's schemas, specification or code lists. Code
-list labels are read from files you download from EDItEUR yourself.
+This package includes EDItEUR's ONIX for Books code lists, unchanged, in
+data/codelists. That file is (c) EDItEUR Limited and is covered by EDItEUR's licence,
+not the MIT License (see data/codelists/README.md). The package does not include
+EDItEUR's schemas or specification.
 
 This project is not affiliated with or endorsed by EDItEUR.
