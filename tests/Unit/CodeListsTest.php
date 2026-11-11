@@ -132,6 +132,16 @@ final class CodeListsTest extends TestCase
         );
     }
 
+    public function testANewIssueWaitsTwoWeeks(): void
+    {
+        $now = new \DateTimeImmutable('2026-11-30 12:00:00');
+
+        self::assertFalse(EditeurDownload::isSettled(new \DateTimeImmutable('2026-11-20'), $now));
+        self::assertTrue(EditeurDownload::isSettled(new \DateTimeImmutable('2026-11-16'), $now));
+        self::assertFalse(EditeurDownload::isSettled(null, $now), 'an unknown date is not settled');
+        self::assertTrue(EditeurDownload::isSettled(new \DateTimeImmutable('2026-11-29'), $now, 0));
+    }
+
     public function testNoIssueLinkIsAnError(): void
     {
         $this->expectException(OnixException::class);

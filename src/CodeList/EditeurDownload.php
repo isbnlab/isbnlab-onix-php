@@ -8,12 +8,20 @@ use ISBNLab\Onix\Exception\OnixException;
 
 /**
  * Downloads the current issue of the code lists from EDItEUR's code lists page,
- * in JSON. Used by bin/fetch-codelists to refresh data/codelists, and usable to
- * get a newer issue than the one this package ships.
+ * in JSON, for this package's maintainers (bin/fetch-codelists). Users get the
+ * code lists with the package, so they never need to fetch from EDItEUR.
+ *
+ * EDItEUR asks that a new issue is copied only once it has been out for a week or
+ * two, in case it needs a correction, so a download refuses a newer issue than that.
+ *
+ * @internal
  */
 final class EditeurDownload
 {
     public const PAGE_URL = 'https://www.editeur.org/14/Code-Lists/';
+
+    /** How long a new issue must have been published before it is copied. */
+    public const MIN_AGE_DAYS = 14;
 
     /**
      * The newest issue's JSON link on the code lists page, as [issue, absolute URL].
@@ -39,15 +47,34 @@ final class EditeurDownload
     }
 
     /**
-     * Downloads the newest issue into $directory, checks that it reads as code lists,
-     * and returns [issue, path of the saved file]. The file is saved exactly as
-     * EDItEUR publishes it.
-     *
-     * @return array{int, string}
+     * True once an issue published at $released is old enough to copy. An unknown
+     * date counts as not yet settled.
      */
-    public static function latestInto(string $directory): array
+    public static function isSettled(?\DateTimeImmutable $released, \DateTimeImmutable $now, int $minAgeDays = self::MIN_AGE_DAYS): bool
+    {
+        return null !== $released && $released <= $now->modify(sprintf('-%d days', $minAgeDays));
+    }
+
+    /**
+     * The newest issue on EDItEUR's page: [issue, URL, publication time from the
+     * file's Last-Modified header, or null if the server gives none].
+     *
+     * @return array{int, string, \DateTimeImmutable|null}
+     */
+    public static function latest(): array
     {
         [$issue, $url] = self::latestJsonUrl(self::get(self::PAGE_URL));
+
+        return [$issue, $url, self::lastModified($url)];
+    }
+
+    /**
+     * Downloads issue $url into $directory, checks that it reads as that issue of the
+     * code lists, and returns the path of the saved file. The file is saved exactly
+     * as EDItEUR publishes it.
+     */
+    public static function downloadInto(string $url, int $issue, string $directory): string
+    {
         $json = self::get($url);
 
         $lists = EditeurCodeLists::fromJson($json);
@@ -60,17 +87,43 @@ final class EditeurDownload
             throw new OnixException(sprintf('Could not write %s', $path));
         }
 
-        return [$issue, $path];
+        return $path;
+    }
+
+    private static function lastModified(string $url): ?\DateTimeImmutable
+    {
+        $headers = @get_headers($url, true, self::context('HEAD'));
+        if (false === $headers) {
+            return null;
+        }
+        $value = array_change_key_case($headers)['last-modified'] ?? null;
+        if (\is_array($value)) {
+            $value = end($value);
+        }
+        if (!\is_string($value)) {
+            return null;
+        }
+        $date = \DateTimeImmutable::createFromFormat(\DATE_RFC7231, $value);
+
+        return false === $date ? null : $date;
+    }
+
+    /**
+     * @return resource
+     */
+    private static function context(string $method = 'GET')
+    {
+        return stream_context_create(['http' => [
+            'method' => $method,
+            'user_agent' => 'isbnlab-onix maintainers (https://github.com/isbnlab/isbnlab-onix-php)',
+            'timeout' => 60,
+            'follow_location' => 1,
+        ]]);
     }
 
     private static function get(string $url): string
     {
-        $context = stream_context_create(['http' => [
-            'user_agent' => 'isbnlab-onix (https://github.com/isbnlab/isbnlab-onix-php)',
-            'timeout' => 60,
-            'follow_location' => 1,
-        ]]);
-        $body = @file_get_contents($url, false, $context);
+        $body = @file_get_contents($url, false, self::context());
         if (false === $body || '' === $body) {
             throw new OnixException(sprintf('Could not download %s', $url));
         }

@@ -11,9 +11,12 @@ This package is not affiliated with or endorsed by EDItEUR.
 
 ## Updating
 
-EDItEUR publishes a new issue about four times a year. To replace the file with the
-newest issue, run the following from a clone of this repository, then run the tests
-and commit:
+EDItEUR publishes a new issue about four times a year and announces it on the ONIX
+mailing list (send a blank email to onix+subscribe@groups.io to join). EDItEUR asks
+that a new issue is copied only a week or two after release, in case it needs
+correcting, so the script below refuses an issue less than 14 days old unless given
+`--now`. From a clone of this repository, run it, then run the tests, commit and tag a
+patch release:
 
 ```bash
 bin/fetch-codelists

@@ -5,10 +5,17 @@ declare(strict_types=1);
 
 /*
  * Replaces the code lists in data/codelists with the newest issue on EDItEUR's
- * code lists page (https://www.editeur.org/14/Code-Lists/). Run it when EDItEUR
- * publishes a new issue, then run the tests and commit the new file.
+ * code lists page (https://www.editeur.org/14/Code-Lists/), for maintainers of
+ * this package. Then run the tests, commit and tag a patch release.
  *
- *   bin/fetch-codelists
+ *   bin/fetch-codelists          only an issue published at least 14 days ago
+ *   bin/fetch-codelists --now    any issue, however new
+ *   bin/fetch-codelists --again  download the current issue again, to pick up a
+ *                                correction EDItEUR made without a new issue number
+ *
+ * EDItEUR asks that a new issue is copied only a week or two after release, in
+ * case it needs fixing. New issues are announced on the ONIX mailing list
+ * (onix+subscribe@groups.io), about every three months.
  */
 
 use ISBNLab\Onix\CodeList\BundledCodeLists;
@@ -17,10 +24,27 @@ use ISBNLab\Onix\Exception\OnixException;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$now = in_array('--now', array_slice($argv, 1), true);
+$again = in_array('--again', array_slice($argv, 1), true);
 $directory = BundledCodeLists::DIRECTORY;
 
 try {
-    [$issue, $path] = EditeurDownload::latestInto($directory);
+    $bundled = (new BundledCodeLists())->issue() ?? 0;
+    [$issue, $url, $released] = EditeurDownload::latest();
+    if ($issue < $bundled || ($issue === $bundled && !$again)) {
+        fwrite(STDOUT, sprintf("Issue %d is already in data/codelists; nothing to do (--again downloads it again).\n", $bundled));
+        exit(0);
+    }
+    if (!$now && !EditeurDownload::isSettled($released, new DateTimeImmutable())) {
+        fwrite(STDOUT, sprintf(
+            "Issue %d was published %s; wait until it is %d days old (or pass --now).\n",
+            $issue,
+            null === $released ? 'on an unknown date' : $released->format('Y-m-d'),
+            EditeurDownload::MIN_AGE_DAYS,
+        ));
+        exit(0);
+    }
+    $path = EditeurDownload::downloadInto($url, $issue, $directory);
 } catch (OnixException $e) {
     fwrite(STDERR, $e->getMessage() . "\n");
     exit(1);

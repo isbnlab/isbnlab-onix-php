@@ -97,8 +97,7 @@ $reader = OnixReader::open('feed.xml', new ReaderOptions(codeLists: new NoCodeLi
 $options = new ReaderOptions(codeLists: EditeurCodeLists::fromFile('ONIX_BookProduct_Codelists_Issue_76.json'));
 ```
 
-`EditeurDownload::latestInto($directory)` downloads the newest issue from EDItEUR for you. A
-downloaded file can also be compiled into a PHP file, which OPcache keeps in memory:
+A downloaded file can also be compiled into a PHP file, which OPcache keeps in memory:
 
 ```bash
 vendor/bin/onix-codelists ONIX_BookProduct_Codelists_Issue_76.json var/onix-codelists.php
@@ -110,8 +109,8 @@ use ISBNLab\Onix\CodeList\ArrayCodeLists;
 $options = new ReaderOptions(codeLists: ArrayCodeLists::fromPhpFile('var/onix-codelists.php'));
 ```
 
-EDItEUR publishes a new issue about four times a year, and new releases of this package include
-it. You can also implement the `CodeLists` interface yourself, for example to translate labels.
+EDItEUR publishes a new issue about four times a year. A release of this package follows a couple of
+weeks later, once the new issue has had time for any corrections. You can also implement the `CodeLists` interface yourself, for example to translate labels.
 
 ## Bad records and broken files
 
