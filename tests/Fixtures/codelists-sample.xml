@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Test fixture in the shape of EDItEUR's code list XML; the labels are made up. -->
+<ONIXCodeTable>
+	<IssueNumber>99</IssueNumber>
+	<CodeList>
+		<CodeListNumber>1</CodeListNumber>
+		<CodeListDescription>Test list 1</CodeListDescription>
+		<IssueNumber>0</IssueNumber>
+		<Code><CodeValue>03</CodeValue><CodeDescription>Test: confirmed</CodeDescription><CodeNotes/><IssueNumber>0</IssueNumber><ModifiedNumber/><DeprecatedNumber/></Code>
+		<Code><CodeValue>05</CodeValue><CodeDescription>Test: delete</CodeDescription><CodeNotes/><IssueNumber>0</IssueNumber><ModifiedNumber/><DeprecatedNumber/></Code>
+	</CodeList>
+	<CodeList>
+		<CodeListNumber>5</CodeListNumber>
+		<CodeListDescription>Test list 5</CodeListDescription>
+		<IssueNumber>0</IssueNumber>
+		<Code><CodeValue>15</CodeValue><CodeDescription>Test: ISBN-13</CodeDescription><CodeNotes/><IssueNumber>0</IssueNumber><ModifiedNumber/><DeprecatedNumber/></Code>
+	</CodeList>
+	<CodeList>
+		<CodeListNumber>150</CodeListNumber>
+		<CodeListDescription>Test list 150</CodeListDescription>
+		<IssueNumber>0</IssueNumber>
+		<Code><CodeValue>BB</CodeValue><CodeDescription>Test: hardback</CodeDescription><CodeNotes/><IssueNumber>0</IssueNumber><ModifiedNumber/><DeprecatedNumber/></Code>
+		<Code><CodeValue>BC</CodeValue><CodeDescription>Test: paperback</CodeDescription><CodeNotes/><IssueNumber>0</IssueNumber><ModifiedNumber/><DeprecatedNumber/></Code>
+	</CodeList>
+</ONIXCodeTable>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test fixture. The books, people and companies are fictional. -->
+<ONIXMessage release="3.0" xmlns="http://ns.editeur.org/onix/3.0/reference">
+  <Header>
+    <Sender>
+      <SenderIdentifier>
+        <SenderIDType>06</SenderIDType>
+        <IDValue>5030000000001</IDValue>
+      </SenderIdentifier>
+      <SenderName>Example Press Ltd</SenderName>
+      <ContactName>Data Team</ContactName>
+      <EmailAddress>data@example.com</EmailAddress>
+    </Sender>
+    <Addressee>
+      <AddresseeName>Example Retailer</AddresseeName>
+    </Addressee>
+    <MessageNumber>42</MessageNumber>
+    <SentDateTime>20240315T1030+0000</SentDateTime>
+    <MessageNote>Weekly full feed</MessageNote>
+    <DefaultLanguageOfText>eng</DefaultLanguageOfText>
+    <DefaultCurrencyCode>GBP</DefaultCurrencyCode>
+  </Header>
+  <Product>
+    <RecordReference>com.example.press.9780306406157</RecordReference>
+    <NotificationType>03</NotificationType>
+    <RecordSourceName>Example Press Ltd</RecordSourceName>
+    <ProductIdentifier>
+      <ProductIDType>01</ProductIDType>
+      <IDTypeName>Example SKU</IDTypeName>
+      <IDValue>EX-1001</IDValue>
+    </ProductIdentifier>
+    <ProductIdentifier>
+      <ProductIDType>15</ProductIDType>
+      <IDValue>9780306406157</IDValue>
+    </ProductIdentifier>
+    <ProductIdentifier>
+      <ProductIDType>03</ProductIDType>
+      <IDValue>9780306406157</IDValue>
+    </ProductIdentifier>
+    <DescriptiveDetail>
+      <ProductComposition>00</ProductComposition>
+      <ProductForm>BC</ProductForm>
+      <ProductFormDetail>B105</ProductFormDetail>
+      <ProductFormDescription>Paperback with flaps</ProductFormDescription>
+      <Measure>
+        <MeasureType>01</MeasureType>
+        <Measurement>198</Measurement>
+        <MeasureUnitCode>mm</MeasureUnitCode>
+      </Measure>
+      <Measure>
+        <MeasureType>02</MeasureType>
+        <Measurement>129</Measurement>
+        <MeasureUnitCode>mm</MeasureUnitCode>
+      </Measure>
+      <Measure>
+        <MeasureType>08</MeasureType>
+        <Measurement>310</Measurement>
+        <MeasureUnitCode>gr</MeasureUnitCode>
+      </Measure>
+      <Collection>
+        <CollectionType>10</CollectionType>
+        <CollectionIdentifier>
+          <CollectionIDType>02</CollectionIDType>
+          <IDValue>1234-5679</IDValue>
+        </CollectionIdentifier>
+        <CollectionSequence>
+          <CollectionSequenceType>02</CollectionSequenceType>
+          <CollectionSequenceNumber>3</CollectionSequenceNumber>
+        </CollectionSequence>
+        <TitleDetail>
+          <TitleType>01</TitleType>
+          <TitleElement>
+            <TitleElementLevel>02</TitleElementLevel>
+            <TitleText>Coastal Mysteries</TitleText>
+          </TitleElement>
+        </TitleDetail>
+      </Collection>
+      <TitleDetail>
+        <TitleType>01</TitleType>
+        <TitleElement>
+          <TitleElementLevel>01</TitleElementLevel>
+          <TitlePrefix>The</TitlePrefix>
+          <TitleWithoutPrefix>Lighthouse Keeper's Atlas</TitleWithoutPrefix>
+          <Subtitle>A Novel</Subtitle>
+        </TitleElement>
+      </TitleDetail>
+      <TitleDetail>
+        <TitleType>11</TitleType>
+        <TitleElement>
+          <TitleElementLevel>01</TitleElementLevel>
+          <TitleText>Atlas des gardiens de phare</TitleText>
+        </TitleElement>
+      </TitleDetail>
+      <Contributor>
+        <SequenceNumber>2</SequenceNumber>
+        <ContributorRole>B06</ContributorRole>
+        <PersonName>Marie Tremblay</PersonName>
+      </Contributor>
+      <Contributor>
+        <SequenceNumber>1</SequenceNumber>
+        <ContributorRole>A01</ContributorRole>
+        <NameIdentifier>
+          <NameIDType>16</NameIDType>
+          <IDValue>0000000000000001</IDValue>
+        </NameIdentifier>
+        <NamesBeforeKey>Ada</NamesBeforeKey>
+        <KeyNames>Quill</KeyNames>
+        <PersonNameInverted>Quill, Ada</PersonNameInverted>
+        <BiographicalNote textformat="05"><p xmlns="http://www.w3.org/1999/xhtml">Ada Quill lives by the <em>sea</em>.</p></BiographicalNote>
+      </Contributor>
+      <ContributorStatement>By Ada Quill; translated by Marie Tremblay</ContributorStatement>
+      <EditionType>REV</EditionType>
+      <EditionNumber>2</EditionNumber>
+      <EditionStatement>Second edition, revised</EditionStatement>
+      <Language>
+        <LanguageRole>01</LanguageRole>
+        <LanguageCode>eng</LanguageCode>
+      </Language>
+      <Language>
+        <LanguageRole>02</LanguageRole>
+        <LanguageCode>fre</LanguageCode>
+      </Language>
+      <Extent>
+        <ExtentType>08</ExtentType>
+        <ExtentValue>352</ExtentValue>
+        <ExtentUnit>03</ExtentUnit>
+      </Extent>
+      <Extent>
+        <ExtentType>00</ExtentType>
+        <ExtentValue>336</ExtentValue>
+        <ExtentUnit>03</ExtentUnit>
+      </Extent>
+      <Extent>
+        <ExtentType>03</ExtentType>
+        <ExtentValue>16</ExtentValue>
+        <ExtentValueRoman>xvi</ExtentValueRoman>
+        <ExtentUnit>03</ExtentUnit>
+      </Extent>
+      <Subject>
+        <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+        <SubjectSchemeVersion>2023</SubjectSchemeVersion>
+        <SubjectCode>FIC022000</SubjectCode>
+      </Subject>
+      <Subject>
+        <MainSubject/>
+        <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+        <SubjectCode>FIC031000</SubjectCode>
+        <SubjectHeadingText>FICTION / Thrillers / General</SubjectHeadingText>
+      </Subject>
+      <Subject>
+        <MainSubject/>
+        <SubjectSchemeIdentifier>93</SubjectSchemeIdentifier>
+        <SubjectSchemeVersion>1.5</SubjectSchemeVersion>
+        <SubjectCode>FF</SubjectCode>
+      </Subject>
+      <Subject>
+        <SubjectSchemeIdentifier>20</SubjectSchemeIdentifier>
+        <SubjectHeadingText>lighthouse; maps;cartography ; coast</SubjectHeadingText>
+      </Subject>
+    </DescriptiveDetail>
+    <CollateralDetail>
+      <TextContent>
+        <TextType>02</TextType>
+        <ContentAudience>00</ContentAudience>
+        <Text>A keeper, a map, a storm.</Text>
+      </TextContent>
+      <TextContent>
+        <TextType>03</TextType>
+        <ContentAudience>00</ContentAudience>
+        <Text textformat="05" language="eng"><p xmlns="http://www.w3.org/1999/xhtml">When the light goes out, <strong>Ada</strong> finds a map.</p><p xmlns="http://www.w3.org/1999/xhtml">Then the storm comes.</p></Text>
+      </TextContent>
+      <TextContent>
+        <TextType>04</TextType>
+        <ContentAudience>00</ContentAudience>
+        <Text textformat="02">&lt;ol&gt;&lt;li&gt;The Light&lt;/li&gt;&lt;li&gt;The Map&lt;/li&gt;&lt;/ol&gt;</Text>
+      </TextContent>
+      <SupportingResource>
+        <ResourceContentType>01</ResourceContentType>
+        <ContentAudience>00</ContentAudience>
+        <ResourceMode>03</ResourceMode>
+        <ResourceVersion>
+          <ResourceForm>02</ResourceForm>
+          <ResourceLink>https://images.example.com/9780306406157.jpg</ResourceLink>
+        </ResourceVersion>
+      </SupportingResource>
+      <SupportingResource>
+        <ResourceContentType>15</ResourceContentType>
+        <ContentAudience>00</ContentAudience>
+        <ResourceMode>06</ResourceMode>
+        <ResourceVersion>
+          <ResourceForm>01</ResourceForm>
+          <ResourceLink>https://samples.example.com/9780306406157</ResourceLink>
+        </ResourceVersion>
+      </SupportingResource>
+    </CollateralDetail>
+    <PublishingDetail>
+      <Imprint>
+        <ImprintIdentifier>
+          <ImprintIDType>01</ImprintIDType>
+          <IDTypeName>Example imprint code</IDTypeName>
+          <IDValue>HARBOUR</IDValue>
+        </ImprintIdentifier>
+        <ImprintName>Harbour Books</ImprintName>
+      </Imprint>
+      <Publisher>
+        <PublishingRole>01</PublishingRole>
+        <PublisherName>Example Press Ltd</PublisherName>
+        <Website>
+          <WebsiteRole>01</WebsiteRole>
+          <WebsiteLink>https://press.example.com/</WebsiteLink>
+        </Website>
+      </Publisher>
+      <CityOfPublication>London</CityOfPublication>
+      <CountryOfPublication>GB</CountryOfPublication>
+      <PublishingStatus>04</PublishingStatus>
+      <PublishingDate>
+        <PublishingDateRole>01</PublishingDateRole>
+        <Date dateformat="00">20240315</Date>
+      </PublishingDate>
+      <PublishingDate>
+        <PublishingDateRole>11</PublishingDateRole>
+        <Date dateformat="05">2019</Date>
+      </PublishingDate>
+      <SalesRights>
+        <SalesRightsType>01</SalesRightsType>
+        <Territory>
+          <RegionsIncluded>WORLD</RegionsIncluded>
+          <CountriesExcluded>US CA</CountriesExcluded>
+        </Territory>
+      </SalesRights>
+    </PublishingDetail>
+    <RelatedMaterial>
+      <RelatedWork>
+        <WorkRelationCode>01</WorkRelationCode>
+        <WorkIdentifier>
+          <WorkIDType>01</WorkIDType>
+          <IDTypeName>Example work ID</IDTypeName>
+          <IDValue>W-555</IDValue>
+        </WorkIdentifier>
+      </RelatedWork>
+      <RelatedProduct>
+        <ProductRelationCode>06</ProductRelationCode>
+        <ProductIdentifier>
+          <ProductIDType>15</ProductIDType>
+          <IDValue>9780306406164</IDValue>
+        </ProductIdentifier>
+        <ProductForm>EA</ProductForm>
+      </RelatedProduct>
+    </RelatedMaterial>
+    <ProductSupply>
+      <Market>
+        <Territory>
+          <CountriesIncluded>GB IE</CountriesIncluded>
+        </Territory>
+      </Market>
+      <SupplyDetail>
+        <Supplier>
+          <SupplierRole>01</SupplierRole>
+          <SupplierIdentifier>
+            <SupplierIDType>06</SupplierIDType>
+            <IDValue>5030000000002</IDValue>
+          </SupplierIdentifier>
+          <SupplierName>Example Distribution</SupplierName>
+        </Supplier>
+        <ProductAvailability>21</ProductAvailability>
+        <SupplyDate>
+          <SupplyDateRole>08</SupplyDateRole>
+          <Date>20240301</Date>
+        </SupplyDate>
+        <Price>
+          <PriceType>02</PriceType>
+          <PriceAmount>9.99</PriceAmount>
+          <Tax>
+            <TaxType>01</TaxType>
+            <TaxRatePercent>0</TaxRatePercent>
+          </Tax>
+          <CurrencyCode>GBP</CurrencyCode>
+        </Price>
+        <Price>
+          <PriceType>02</PriceType>
+          <PriceAmount>12,50</PriceAmount>
+          <CurrencyCode>EUR</CurrencyCode>
+          <Territory>
+            <CountriesIncluded>IE</CountriesIncluded>
+          </Territory>
+        </Price>
+      </SupplyDetail>
+    </ProductSupply>
+    <ProductSupply>
+      <Market>
+        <Territory>
+          <CountriesIncluded>US</CountriesIncluded>
+        </Territory>
+      </Market>
+      <SupplyDetail>
+        <Supplier>
+          <SupplierRole>02</SupplierRole>
+          <SupplierName>Example US Distribution</SupplierName>
+        </Supplier>
+        <ProductAvailability>20</ProductAvailability>
+        <Price>
+          <PriceType>01</PriceType>
+          <PriceAmount>17.00</PriceAmount>
+          <CurrencyCode>USD</CurrencyCode>
+        </Price>
+      </SupplyDetail>
+    </ProductSupply>
+    <SomeVendorExtension>
+      <Anything>Unknown elements are ignored</Anything>
+    </SomeVendorExtension>
+  </Product>
+  <Product>
+    <RecordReference>com.example.press.9780306406164</RecordReference>
+    <NotificationType>03</NotificationType>
+    <ProductIdentifier>
+      <ProductIDType>15</ProductIDType>
+      <IDValue>9780306406164</IDValue>
+    </ProductIdentifier>
+    <DescriptiveDetail>
+      <ProductComposition>00</ProductComposition>
+      <ProductForm>EA</ProductForm>
+      <TitleDetail>
+        <TitleType>01</TitleType>
+        <TitleElement>
+          <TitleElementLevel>01</TitleElementLevel>
+          <TitleText>The Lighthouse Keeper's Atlas</TitleText>
+        </TitleElement>
+        <TitleElement>
+          <TitleElementLevel>02</TitleElementLevel>
+          <PartNumber>3</PartNumber>
+          <TitleText>Coastal Mysteries</TitleText>
+        </TitleElement>
+      </TitleDetail>
+      <NoContributor/>
+      <Extent>
+        <ExtentType>00</ExtentType>
+        <ExtentValue>about three hundred</ExtentValue>
+        <ExtentUnit>03</ExtentUnit>
+      </Extent>
+    </DescriptiveDetail>
+  </Product>
+  <Product>
+    <RecordReference>com.example.press.0000000000</RecordReference>
+    <NotificationType>05</NotificationType>
+    <ProductIdentifier>
+      <ProductIDType>15</ProductIDType>
+      <IDValue>9780000000002</IDValue>
+    </ProductIdentifier>
+    <DeletionText>Cancelled before publication</DeletionText>
+  </Product>
+</ONIXMessage>

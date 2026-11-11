@@ -1,0 +1,18 @@
+{
+	"ONIXCodeTable": {
+		"IssueNumber": 99,
+		"CodeList": [
+			{"CodeListNumber": 1, "CodeListDescription": "Test list 1", "IssueNumber": 0, "Code": [
+				{"CodeValue": "03", "CodeDescription": "Test: confirmed", "CodeNotes": null, "IssueNumber": 0, "ModifiedNumber": null, "DeprecatedNumber": null},
+				{"CodeValue": "05", "CodeDescription": "Test: delete", "CodeNotes": null, "IssueNumber": 0, "ModifiedNumber": null, "DeprecatedNumber": null}
+			]},
+			{"CodeListNumber": 5, "CodeListDescription": "Test list 5", "IssueNumber": 0, "Code": [
+				{"CodeValue": "15", "CodeDescription": "Test: ISBN-13", "CodeNotes": null, "IssueNumber": 0, "ModifiedNumber": null, "DeprecatedNumber": null}
+			]},
+			{"CodeListNumber": 150, "CodeListDescription": "Test list 150", "IssueNumber": 0, "Code": [
+				{"CodeValue": "BB", "CodeDescription": "Test: hardback", "CodeNotes": null, "IssueNumber": 0, "ModifiedNumber": null, "DeprecatedNumber": null},
+				{"CodeValue": "BC", "CodeDescription": "Test: paperback", "CodeNotes": null, "IssueNumber": 0, "ModifiedNumber": null, "DeprecatedNumber": null}
+			]}
+		]
+	}
+}

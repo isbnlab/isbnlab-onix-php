@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ONIXmessage SYSTEM "http://www.editeur.org/onix/2.1/short/onix-international.dtd">
+<!-- Hand-written test fixture. The books, people and companies are fictional. -->
+<ONIXmessage>
+  <header>
+    <m174>Example Books Pty Ltd</m174>
+    <m175>Feed Desk</m175>
+    <m283>feeds@example.com</m283>
+    <m173>1234567</m173>
+    <m178>Example Retailer</m178>
+    <m182>20240102</m182>
+    <m184>eng</m184>
+    <m185>02</m185>
+    <m186>AUD</m186>
+  </header>
+  <product>
+    <a001>EXB-9781234567897</a001>
+    <a002>03</a002>
+    <productidentifier>
+      <b221>15</b221>
+      <b244>9781234567897</b244>
+    </productidentifier>
+    <productidentifier>
+      <b221>02</b221>
+      <b244>123456789X</b244>
+    </productidentifier>
+    <b012>BB</b012>
+    <b333>B401</b333>
+    <series>
+      <seriesidentifier>
+        <b273>01</b273>
+        <b244>GARDENS</b244>
+      </seriesidentifier>
+      <b018>Gardens of the South</b018>
+      <b019>2</b019>
+    </series>
+    <title>
+      <b202>01</b202>
+      <b203>Caf&eacute; Gardens &amp; Courtyards</b203>
+      <b029>Planting for Small Spaces &mdash; Revised</b029>
+    </title>
+    <workidentifier>
+      <b201>01</b201>
+      <b244>WK-778</b244>
+    </workidentifier>
+    <contributor>
+      <b034>1</b034>
+      <b035>A01</b035>
+      <b037>Brennan, Tom&aacute;s</b037>
+      <b044>Tom&aacute;s Brennan designs small gardens.</b044>
+    </contributor>
+    <contributor>
+      <b034>2</b034>
+      <b035>A13</b035>
+      <b047>Example Photo Agency</b047>
+    </contributor>
+    <b056>REV</b056>
+    <b057>3</b057>
+    <language>
+      <b253>01</b253>
+      <b252>eng</b252>
+    </language>
+    <b061>224</b061>
+    <b064>GAR013000</b064>
+    <b200>2.8</b200>
+    <mainsubject>
+      <b191>93</b191>
+      <b069>WMD</b069>
+    </mainsubject>
+    <subject>
+      <b067>10</b067>
+      <b069>GAR019000</b069>
+    </subject>
+    <subject>
+      <b067>20</b067>
+      <b070>gardening, courtyards, small spaces</b070>
+    </subject>
+    <b073>01</b073>
+    <othertext>
+      <d102>02</d102>
+      <d104>Small spaces, big gardens.</d104>
+    </othertext>
+    <othertext>
+      <d102>01</d102>
+      <d103>02</d103>
+      <d104><![CDATA[<p>Turn a <b>courtyard</b> into a garden.</p>]]></d104>
+    </othertext>
+    <mediafile>
+      <f114>04</f114>
+      <f115>03</f115>
+      <f116>01</f116>
+      <f117>https://images.example.com/9781234567897.jpg</f117>
+    </mediafile>
+    <imprint>
+      <b079>Example Garden Books</b079>
+    </imprint>
+    <publisher>
+      <b291>01</b291>
+      <b241>01</b241>
+      <b242>Example publisher code</b242>
+      <b243>EXB</b243>
+      <b081>Example Books Pty Ltd</b081>
+    </publisher>
+    <b209>Melbourne</b209>
+    <b083>AU</b083>
+    <b394>04</b394>
+    <b003>20240201</b003>
+    <b088>2015</b088>
+    <salesrights>
+      <b089>01</b089>
+      <b090>AU NZ</b090>
+    </salesrights>
+    <measure>
+      <c093>01</c093>
+      <c094>9.25</c094>
+      <c095>in</c095>
+    </measure>
+    <measure>
+      <c093>01</c093>
+      <c094>235</c094>
+      <c095>mm</c095>
+    </measure>
+    <relatedproduct>
+      <h208>06</h208>
+      <productidentifier>
+        <b221>15</b221>
+        <b244>9781234567880</b244>
+      </productidentifier>
+    </relatedproduct>
+    <supplydetail>
+      <j137>Example Distribution AU</j137>
+      <j292>01</j292>
+      <j141>IP</j141>
+      <j396>21</j396>
+      <j143>20240201</j143>
+      <price>
+        <j148>02</j148>
+        <j151>39.99</j151>
+        <j152>AUD</j152>
+        <b251>AU</b251>
+      </price>
+      <price>
+        <j148>02</j148>
+        <j151>44.99</j151>
+        <j152>NZD</j152>
+        <b251>NZ</b251>
+      </price>
+    </supplydetail>
+  </product>
+  <product>
+    <a001>EXB-0987654321</a001>
+    <a002>2</a002>
+    <b004>0987654321</b004>
+    <b005>9780987654325</b005>
+    <b012>BC</b012>
+    <b028>Old School Record</b028>
+    <contributor>
+      <b035>A01</b035>
+      <b036>Lee Example</b036>
+    </contributor>
+    <b081>Bare Publisher Name</b081>
+    <b003>2001</b003>
+    <supplydetail>
+      <j137>Old Distributor</j137>
+      <j141>OP</j141>
+      <price>
+        <j148>01</j148>
+        <j151>n/a</j151>
+        <j152>AUD</j152>
+      </price>
+    </supplydetail>
+  </product>
+</ONIXmessage>

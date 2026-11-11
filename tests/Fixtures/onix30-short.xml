@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test fixture. The books, people and companies are fictional. -->
+<ONIXmessage release="3.0" xmlns="http://ns.editeur.org/onix/3.0/short">
+  <header>
+    <sender>
+      <senderidentifier>
+        <m379>06</m379>
+        <b244>5030000000001</b244>
+      </senderidentifier>
+      <x298>Example Press Ltd</x298>
+      <x299>Data Team</x299>
+      <j272>data@example.com</j272>
+    </sender>
+    <addressee>
+      <x300>Example Retailer</x300>
+    </addressee>
+    <m180>42</m180>
+    <x307>20240315T1030+0000</x307>
+    <m183>Weekly full feed</m183>
+    <m184>eng</m184>
+    <m186>GBP</m186>
+  </header>
+  <product>
+    <a001>com.example.press.9780306406157</a001>
+    <a002>03</a002>
+    <a197>Example Press Ltd</a197>
+    <productidentifier>
+      <b221>01</b221>
+      <b233>Example SKU</b233>
+      <b244>EX-1001</b244>
+    </productidentifier>
+    <productidentifier>
+      <b221>15</b221>
+      <b244>9780306406157</b244>
+    </productidentifier>
+    <productidentifier>
+      <b221>03</b221>
+      <b244>9780306406157</b244>
+    </productidentifier>
+    <descriptivedetail>
+      <x314>00</x314>
+      <b012>BC</b012>
+      <b333>B105</b333>
+      <b014>Paperback with flaps</b014>
+      <measure>
+        <x315>01</x315>
+        <c094>198</c094>
+        <c095>mm</c095>
+      </measure>
+      <measure>
+        <x315>02</x315>
+        <c094>129</c094>
+        <c095>mm</c095>
+      </measure>
+      <measure>
+        <x315>08</x315>
+        <c094>310</c094>
+        <c095>gr</c095>
+      </measure>
+      <collection>
+        <x329>10</x329>
+        <collectionidentifier>
+          <x344>02</x344>
+          <b244>1234-5679</b244>
+        </collectionidentifier>
+        <collectionsequence>
+          <x479>02</x479>
+          <x481>3</x481>
+        </collectionsequence>
+        <titledetail>
+          <b202>01</b202>
+          <titleelement>
+            <x409>02</x409>
+            <b203>Coastal Mysteries</b203>
+          </titleelement>
+        </titledetail>
+      </collection>
+      <titledetail>
+        <b202>01</b202>
+        <titleelement>
+          <x409>01</x409>
+          <b030>The</b030>
+          <b031>Lighthouse Keeper's Atlas</b031>
+          <b029>A Novel</b029>
+        </titleelement>
+      </titledetail>
+      <titledetail>
+        <b202>11</b202>
+        <titleelement>
+          <x409>01</x409>
+          <b203>Atlas des gardiens de phare</b203>
+        </titleelement>
+      </titledetail>
+      <contributor>
+        <b034>2</b034>
+        <b035>B06</b035>
+        <b036>Marie Tremblay</b036>
+      </contributor>
+      <contributor>
+        <b034>1</b034>
+        <b035>A01</b035>
+        <nameidentifier>
+          <x415>16</x415>
+          <b244>0000000000000001</b244>
+        </nameidentifier>
+        <b039>Ada</b039>
+        <b040>Quill</b040>
+        <b037>Quill, Ada</b037>
+        <b044 textformat="05"><p xmlns="http://www.w3.org/1999/xhtml">Ada Quill lives by the <em>sea</em>.</p></b044>
+      </contributor>
+      <b049>By Ada Quill; translated by Marie Tremblay</b049>
+      <x419>REV</x419>
+      <b057>2</b057>
+      <b058>Second edition, revised</b058>
+      <language>
+        <b253>01</b253>
+        <b252>eng</b252>
+      </language>
+      <language>
+        <b253>02</b253>
+        <b252>fre</b252>
+      </language>
+      <extent>
+        <b218>08</b218>
+        <b219>352</b219>
+        <b220>03</b220>
+      </extent>
+      <extent>
+        <b218>00</b218>
+        <b219>336</b219>
+        <b220>03</b220>
+      </extent>
+      <extent>
+        <b218>03</b218>
+        <b219>16</b219>
+        <x421>xvi</x421>
+        <b220>03</b220>
+      </extent>
+      <subject>
+        <b067>10</b067>
+        <b068>2023</b068>
+        <b069>FIC022000</b069>
+      </subject>
+      <subject>
+        <x425/>
+        <b067>10</b067>
+        <b069>FIC031000</b069>
+        <b070>FICTION / Thrillers / General</b070>
+      </subject>
+      <subject>
+        <x425/>
+        <b067>93</b067>
+        <b068>1.5</b068>
+        <b069>FF</b069>
+      </subject>
+      <subject>
+        <b067>20</b067>
+        <b070>lighthouse; maps;cartography ; coast</b070>
+      </subject>
+    </descriptivedetail>
+    <collateraldetail>
+      <textcontent>
+        <x426>02</x426>
+        <x427>00</x427>
+        <d104>A keeper, a map, a storm.</d104>
+      </textcontent>
+      <textcontent>
+        <x426>03</x426>
+        <x427>00</x427>
+        <d104 textformat="05" language="eng"><p xmlns="http://www.w3.org/1999/xhtml">When the light goes out, <strong>Ada</strong> finds a map.</p><p xmlns="http://www.w3.org/1999/xhtml">Then the storm comes.</p></d104>
+      </textcontent>
+      <textcontent>
+        <x426>04</x426>
+        <x427>00</x427>
+        <d104 textformat="02">&lt;ol&gt;&lt;li&gt;The Light&lt;/li&gt;&lt;li&gt;The Map&lt;/li&gt;&lt;/ol&gt;</d104>
+      </textcontent>
+      <supportingresource>
+        <x436>01</x436>
+        <x427>00</x427>
+        <x437>03</x437>
+        <resourceversion>
+          <x441>02</x441>
+          <x435>https://images.example.com/9780306406157.jpg</x435>
+        </resourceversion>
+      </supportingresource>
+      <supportingresource>
+        <x436>15</x436>
+        <x427>00</x427>
+        <x437>06</x437>
+        <resourceversion>
+          <x441>01</x441>
+          <x435>https://samples.example.com/9780306406157</x435>
+        </resourceversion>
+      </supportingresource>
+    </collateraldetail>
+    <publishingdetail>
+      <imprint>
+        <imprintidentifier>
+          <x445>01</x445>
+          <b233>Example imprint code</b233>
+          <b244>HARBOUR</b244>
+        </imprintidentifier>
+        <b079>Harbour Books</b079>
+      </imprint>
+      <publisher>
+        <b291>01</b291>
+        <b081>Example Press Ltd</b081>
+        <website>
+          <b367>01</b367>
+          <b295>https://press.example.com/</b295>
+        </website>
+      </publisher>
+      <b209>London</b209>
+      <b083>GB</b083>
+      <b394>04</b394>
+      <publishingdate>
+        <x448>01</x448>
+        <b306 dateformat="00">20240315</b306>
+      </publishingdate>
+      <publishingdate>
+        <x448>11</x448>
+        <b306 dateformat="05">2019</b306>
+      </publishingdate>
+      <salesrights>
+        <b089>01</b089>
+        <territory>
+          <x450>WORLD</x450>
+          <x451>US CA</x451>
+        </territory>
+      </salesrights>
+    </publishingdetail>
+    <relatedmaterial>
+      <relatedwork>
+        <x454>01</x454>
+        <workidentifier>
+          <b201>01</b201>
+          <b233>Example work ID</b233>
+          <b244>W-555</b244>
+        </workidentifier>
+      </relatedwork>
+      <relatedproduct>
+        <x455>06</x455>
+        <productidentifier>
+          <b221>15</b221>
+          <b244>9780306406164</b244>
+        </productidentifier>
+        <b012>EA</b012>
+      </relatedproduct>
+    </relatedmaterial>
+    <productsupply>
+      <market>
+        <territory>
+          <x449>GB IE</x449>
+        </territory>
+      </market>
+      <supplydetail>
+        <supplier>
+          <j292>01</j292>
+          <supplieridentifier>
+            <j345>06</j345>
+            <b244>5030000000002</b244>
+          </supplieridentifier>
+          <j137>Example Distribution</j137>
+        </supplier>
+        <j396>21</j396>
+        <supplydate>
+          <x461>08</x461>
+          <b306>20240301</b306>
+        </supplydate>
+        <price>
+          <x462>02</x462>
+          <j151>9.99</j151>
+          <tax>
+            <x470>01</x470>
+            <x472>0</x472>
+          </tax>
+          <j152>GBP</j152>
+        </price>
+        <price>
+          <x462>02</x462>
+          <j151>12,50</j151>
+          <j152>EUR</j152>
+          <territory>
+            <x449>IE</x449>
+          </territory>
+        </price>
+      </supplydetail>
+    </productsupply>
+    <productsupply>
+      <market>
+        <territory>
+          <x449>US</x449>
+        </territory>
+      </market>
+      <supplydetail>
+        <supplier>
+          <j292>02</j292>
+          <j137>Example US Distribution</j137>
+        </supplier>
+        <j396>20</j396>
+        <price>
+          <x462>01</x462>
+          <j151>17.00</j151>
+          <j152>USD</j152>
+        </price>
+      </supplydetail>
+    </productsupply>
+    <SomeVendorExtension>
+      <Anything>Unknown elements are ignored</Anything>
+    </SomeVendorExtension>
+  </product>
+  <product>
+    <a001>com.example.press.9780306406164</a001>
+    <a002>03</a002>
+    <productidentifier>
+      <b221>15</b221>
+      <b244>9780306406164</b244>
+    </productidentifier>
+    <descriptivedetail>
+      <x314>00</x314>
+      <b012>EA</b012>
+      <titledetail>
+        <b202>01</b202>
+        <titleelement>
+          <x409>01</x409>
+          <b203>The Lighthouse Keeper's Atlas</b203>
+        </titleelement>
+        <titleelement>
+          <x409>02</x409>
+          <x410>3</x410>
+          <b203>Coastal Mysteries</b203>
+        </titleelement>
+      </titledetail>
+      <n339/>
+      <extent>
+        <b218>00</b218>
+        <b219>about three hundred</b219>
+        <b220>03</b220>
+      </extent>
+    </descriptivedetail>
+  </product>
+  <product>
+    <a001>com.example.press.0000000000</a001>
+    <a002>05</a002>
+    <productidentifier>
+      <b221>15</b221>
+      <b244>9780000000002</b244>
+    </productidentifier>
+    <a199>Cancelled before publication</a199>
+  </product>
+</ONIXmessage>

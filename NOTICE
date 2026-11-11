@@ -1,0 +1,14 @@
+isbnlab/onix
+Copyright (c) 2026 ISBNLab. Released under the MIT License (see LICENSE).
+
+ONIX for Books is a standard developed and published by EDItEUR Limited
+(https://www.editeur.org/). This software implements it. The ONIX element names
+(reference names and short tags) and the code values it recognises are part of the
+EDItEUR standard and are used under the Licence to use EDItEUR Standards
+(https://doi.org/10.4400/nwgj). That licence, not the MIT License, governs the
+standard itself.
+
+This package does not include EDItEUR's schemas, specification or code lists. Code
+list labels are read from files you download from EDItEUR yourself.
+
+This project is not affiliated with or endorsed by EDItEUR.

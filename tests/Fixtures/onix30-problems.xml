@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test fixture: a feed with problems a reader must survive. -->
+<ONIXMessage release="3.0">
+  <Header>
+    <Sender><SenderName>Messy Feeds Inc</SenderName></Sender>
+    <SentDateTime>20240101</SentDateTime>
+  </Header>
+  <Product>
+    <RecordReference>ok-1</RecordReference>
+    <NotificationType>03</NotificationType>
+    <ProductIdentifier><ProductIDType>15</ProductIDType><IDValue>9780306406157</IDValue></ProductIdentifier>
+  </Product>
+  <Product>
+    <NotificationType>03</NotificationType>
+    <DescriptiveDetail>
+      <TitleDetail><TitleType>01</TitleType><TitleElement><TitleElementLevel>01</TitleElementLevel><TitleText>Nobody knows which book this is</TitleText></TitleElement></TitleDetail>
+    </DescriptiveDetail>
+  </Product>
+  <Product>
+    <RecordReference>messy-3</RecordReference>
+    <NotificationType>3</NotificationType>
+    <ProductIdentifier><ProductIDType>15</ProductIDType><IDValue> 9780306406164 </IDValue></ProductIdentifier>
+    <ProductIdentifier><ProductIDType>03</ProductIDType><IDValue></IDValue></ProductIdentifier>
+    <DescriptiveDetail>
+      <ProductForm></ProductForm>
+      <TitleDetail><TitleType>01</TitleType><TitleElement><TitleElementLevel>01</TitleElementLevel><TitleText>  Messy   Title  </TitleText></TitleElement></TitleDetail>
+      <Contributor><ContributorRole>A01</ContributorRole><SequenceNumber>first</SequenceNumber><PersonName>A. Writer</PersonName></Contributor>
+      <EditionNumber>2nd</EditionNumber>
+      <Extent><ExtentType>00</ExtentType><ExtentValue>1,024</ExtentValue><ExtentUnit>03</ExtentUnit></Extent>
+      <Banana>Not ONIX at all</Banana>
+    </DescriptiveDetail>
+    <PublishingDetail>
+      <PublishingDate><PublishingDateRole>01</PublishingDateRole><Date>2024-02-30</Date></PublishingDate>
+    </PublishingDetail>
+    <ProductSupply>
+      <SupplyDetail>
+        <Supplier><SupplierName>Somebody</SupplierName></Supplier>
+        <Price><PriceType>02</PriceType><PriceAmount>abc</PriceAmount><CurrencyCode>USD</CurrencyCode></Price>
+        <Price><PriceType>02</PriceType><PriceAmount>1,299.00</PriceAmount><CurrencyCode>JPY</CurrencyCode></Price>
+      </SupplyDetail>
+    </ProductSupply>
+  </Product>
+  <Product>
+    <RecordReference>ok-4</RecordReference>
+    <ProductIdentifier><ProductIDType>15</ProductIDType><IDValue>9780000000002</IDValue></ProductIdentifier>
+  </Product>
+</ONIXMessage>

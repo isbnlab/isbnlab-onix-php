@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ONIXMessage SYSTEM "http://www.editeur.org/onix/2.1/reference/onix-international.dtd">
+<!-- Hand-written test fixture. The books, people and companies are fictional. -->
+<ONIXMessage>
+  <Header>
+    <FromCompany>Example Books Pty Ltd</FromCompany>
+    <FromPerson>Feed Desk</FromPerson>
+    <FromEmail>feeds@example.com</FromEmail>
+    <FromSAN>1234567</FromSAN>
+    <ToCompany>Example Retailer</ToCompany>
+    <SentDate>20240102</SentDate>
+    <DefaultLanguageOfText>eng</DefaultLanguageOfText>
+    <DefaultPriceTypeCode>02</DefaultPriceTypeCode>
+    <DefaultCurrencyCode>AUD</DefaultCurrencyCode>
+  </Header>
+  <Product>
+    <RecordReference>EXB-9781234567897</RecordReference>
+    <NotificationType>03</NotificationType>
+    <ProductIdentifier>
+      <ProductIDType>15</ProductIDType>
+      <IDValue>9781234567897</IDValue>
+    </ProductIdentifier>
+    <ProductIdentifier>
+      <ProductIDType>02</ProductIDType>
+      <IDValue>123456789X</IDValue>
+    </ProductIdentifier>
+    <ProductForm>BB</ProductForm>
+    <ProductFormDetail>B401</ProductFormDetail>
+    <Series>
+      <SeriesIdentifier>
+        <SeriesIDType>01</SeriesIDType>
+        <IDValue>GARDENS</IDValue>
+      </SeriesIdentifier>
+      <TitleOfSeries>Gardens of the South</TitleOfSeries>
+      <NumberWithinSeries>2</NumberWithinSeries>
+    </Series>
+    <Title>
+      <TitleType>01</TitleType>
+      <TitleText>Caf&eacute; Gardens &amp; Courtyards</TitleText>
+      <Subtitle>Planting for Small Spaces &mdash; Revised</Subtitle>
+    </Title>
+    <WorkIdentifier>
+      <WorkIDType>01</WorkIDType>
+      <IDValue>WK-778</IDValue>
+    </WorkIdentifier>
+    <Contributor>
+      <SequenceNumber>1</SequenceNumber>
+      <ContributorRole>A01</ContributorRole>
+      <PersonNameInverted>Brennan, Tom&aacute;s</PersonNameInverted>
+      <BiographicalNote>Tom&aacute;s Brennan designs small gardens.</BiographicalNote>
+    </Contributor>
+    <Contributor>
+      <SequenceNumber>2</SequenceNumber>
+      <ContributorRole>A13</ContributorRole>
+      <CorporateName>Example Photo Agency</CorporateName>
+    </Contributor>
+    <EditionTypeCode>REV</EditionTypeCode>
+    <EditionNumber>3</EditionNumber>
+    <Language>
+      <LanguageRole>01</LanguageRole>
+      <LanguageCode>eng</LanguageCode>
+    </Language>
+    <NumberOfPages>224</NumberOfPages>
+    <BASICMainSubject>GAR013000</BASICMainSubject>
+    <BASICVersion>2.8</BASICVersion>
+    <MainSubject>
+      <MainSubjectSchemeIdentifier>93</MainSubjectSchemeIdentifier>
+      <SubjectCode>WMD</SubjectCode>
+    </MainSubject>
+    <Subject>
+      <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+      <SubjectCode>GAR019000</SubjectCode>
+    </Subject>
+    <Subject>
+      <SubjectSchemeIdentifier>20</SubjectSchemeIdentifier>
+      <SubjectHeadingText>gardening, courtyards, small spaces</SubjectHeadingText>
+    </Subject>
+    <AudienceCode>01</AudienceCode>
+    <OtherText>
+      <TextTypeCode>02</TextTypeCode>
+      <Text>Small spaces, big gardens.</Text>
+    </OtherText>
+    <OtherText>
+      <TextTypeCode>01</TextTypeCode>
+      <TextFormat>02</TextFormat>
+      <Text><![CDATA[<p>Turn a <b>courtyard</b> into a garden.</p>]]></Text>
+    </OtherText>
+    <MediaFile>
+      <MediaFileTypeCode>04</MediaFileTypeCode>
+      <MediaFileFormatCode>03</MediaFileFormatCode>
+      <MediaFileLinkTypeCode>01</MediaFileLinkTypeCode>
+      <MediaFileLink>https://images.example.com/9781234567897.jpg</MediaFileLink>
+    </MediaFile>
+    <Imprint>
+      <ImprintName>Example Garden Books</ImprintName>
+    </Imprint>
+    <Publisher>
+      <PublishingRole>01</PublishingRole>
+      <NameCodeType>01</NameCodeType>
+      <NameCodeTypeName>Example publisher code</NameCodeTypeName>
+      <NameCodeValue>EXB</NameCodeValue>
+      <PublisherName>Example Books Pty Ltd</PublisherName>
+    </Publisher>
+    <CityOfPublication>Melbourne</CityOfPublication>
+    <CountryOfPublication>AU</CountryOfPublication>
+    <PublishingStatus>04</PublishingStatus>
+    <PublicationDate>20240201</PublicationDate>
+    <YearFirstPublished>2015</YearFirstPublished>
+    <SalesRights>
+      <SalesRightsType>01</SalesRightsType>
+      <RightsCountry>AU NZ</RightsCountry>
+    </SalesRights>
+    <Measure>
+      <MeasureTypeCode>01</MeasureTypeCode>
+      <Measurement>9.25</Measurement>
+      <MeasureUnitCode>in</MeasureUnitCode>
+    </Measure>
+    <Measure>
+      <MeasureTypeCode>01</MeasureTypeCode>
+      <Measurement>235</Measurement>
+      <MeasureUnitCode>mm</MeasureUnitCode>
+    </Measure>
+    <RelatedProduct>
+      <RelationCode>06</RelationCode>
+      <ProductIdentifier>
+        <ProductIDType>15</ProductIDType>
+        <IDValue>9781234567880</IDValue>
+      </ProductIdentifier>
+    </RelatedProduct>
+    <SupplyDetail>
+      <SupplierName>Example Distribution AU</SupplierName>
+      <SupplierRole>01</SupplierRole>
+      <AvailabilityCode>IP</AvailabilityCode>
+      <ProductAvailability>21</ProductAvailability>
+      <OnSaleDate>20240201</OnSaleDate>
+      <Price>
+        <PriceTypeCode>02</PriceTypeCode>
+        <PriceAmount>39.99</PriceAmount>
+        <CurrencyCode>AUD</CurrencyCode>
+        <CountryCode>AU</CountryCode>
+      </Price>
+      <Price>
+        <PriceTypeCode>02</PriceTypeCode>
+        <PriceAmount>44.99</PriceAmount>
+        <CurrencyCode>NZD</CurrencyCode>
+        <CountryCode>NZ</CountryCode>
+      </Price>
+    </SupplyDetail>
+  </Product>
+  <Product>
+    <RecordReference>EXB-0987654321</RecordReference>
+    <NotificationType>2</NotificationType>
+    <ISBN>0987654321</ISBN>
+    <EAN13>9780987654325</EAN13>
+    <ProductForm>BC</ProductForm>
+    <DistinctiveTitle>Old School Record</DistinctiveTitle>
+    <Contributor>
+      <ContributorRole>A01</ContributorRole>
+      <PersonName>Lee Example</PersonName>
+    </Contributor>
+    <PublisherName>Bare Publisher Name</PublisherName>
+    <PublicationDate>2001</PublicationDate>
+    <SupplyDetail>
+      <SupplierName>Old Distributor</SupplierName>
+      <AvailabilityCode>OP</AvailabilityCode>
+      <Price>
+        <PriceTypeCode>01</PriceTypeCode>
+        <PriceAmount>n/a</PriceAmount>
+        <CurrencyCode>AUD</CurrencyCode>
+      </Price>
+    </SupplyDetail>
+  </Product>
+</ONIXMessage>

@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+namespace ISBNLab\Onix;
+
+use Closure;
+use ISBNLab\Onix\CodeList\CodeLists;
+use ISBNLab\Onix\CodeList\NoCodeLists;
+
+final class ReaderOptions
+{
+    /**
+     * @param CodeLists $codeLists where code labels come from; none by default
+     * @param OnixVersion|null $version force a version instead of detecting it
+     * @param bool $throwOnError throw InvalidProductException on the first bad product instead of skipping it
+     * @param (Closure(ProductError): void)|null $onError called for every product that is skipped
+     * @param int $maxStoredErrors how many skipped products OnixReader::errors() keeps (the count is always exact)
+     * @param bool $fixEntities rewrite HTML named entities (&eacute;) that XML does not know
+     */
+    public function __construct(
+        public readonly CodeLists $codeLists = new NoCodeLists(),
+        public readonly ?OnixVersion $version = null,
+        public readonly bool $throwOnError = false,
+        public readonly ?Closure $onError = null,
+        public readonly int $maxStoredErrors = 1000,
+        public readonly bool $fixEntities = true,
+    ) {}
+}

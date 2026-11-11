@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test fixture: a feed with problems a reader must survive. -->
+<ONIXMessage release="3.0">
+  <Header>
+    <Sender><SenderName>Messy Feeds Inc</SenderName></Sender>
+    <SentDateTime>20240101</SentDateTime>
+  </Header>
+  <Product>
+    <RecordReference>ok-1</RecordReference>
+    <NotificationType>03</NotificationType>
+    <ProductIdentifier><ProductIDType>15</ProductIDType><IDValue>9780306406157</IDValue></ProductIdentifier>
+  </Product>
+  <Product>
+    <NotificationType>03</NotificationType>
+    <DescriptiveDetail>
+      <TitleDetail><TitleType>01</TitleType><TitleElement><TitleElementLevel>01</TitleElementLevel><TitleText>Nobody knows which book this is</TitleText></TitleElement></TitleDetail>
+    </DescriptiveDetail>
+  </Product>
+  <Product>
+        <DescriptiveDetail><TitleDetail>
