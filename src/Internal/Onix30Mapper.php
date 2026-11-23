@@ -249,7 +249,8 @@ final class Onix30Mapper extends Mapper
     {
         $imprints = [];
         foreach ($publishing->children('Imprint') as $element) {
-            $imprints[] = new Imprint($element->text('ImprintName'), $this->identifiers($element, 'ImprintIdentifier', 'ImprintIDType', 44));
+            $inverted = $element->text('ImprintNameInverted');
+            $imprints[] = new Imprint($element->text('ImprintName') ?? $inverted, $this->identifiers($element, 'ImprintIdentifier', 'ImprintIDType', 44), $inverted);
         }
 
         return $imprints;
@@ -269,11 +270,13 @@ final class Onix30Mapper extends Mapper
                     $websites[] = $link;
                 }
             }
+            $inverted = $element->text('PublisherNameInverted');
             $publishers[] = new Publisher(
-                name: $element->text('PublisherName'),
+                name: $element->text('PublisherName') ?? $inverted,
                 role: $this->code(45, $element->text('PublishingRole')),
                 identifiers: $this->identifiers($element, 'PublisherIdentifier', 'PublisherIDType', 44),
                 websites: $websites,
+                nameInverted: $inverted,
             );
         }
 

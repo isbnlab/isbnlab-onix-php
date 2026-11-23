@@ -163,8 +163,12 @@ The version is taken from the message's `release` attribute or namespace, and ch
 each product's own structure, so a stored fragment or a mislabelled file is still read correctly.
 `ReaderOptions(version: OnixVersion::V21)` forces a version.
 
-ONIX 3.1 is read like ONIX 3.0 and reported as `OnixVersion::V31`. ONIX 2.1 products are mapped
-onto the same model as ONIX 3.0:
+ONIX 3.1 (through revision 3.1.3) is read like ONIX 3.0 and reported as `OnixVersion::V31`. From
+3.1.3, publishers and imprints have `nameInverted` for sorting (`name` falls back to it when it is
+the only form sent), and a text has `script` for the same language in another script. Elements the
+model has no field for, such as a text's `TextSource`, are skipped without error.
+
+ONIX 2.1 products are mapped onto the same model as ONIX 3.0:
 
 | ONIX 2.1 | Becomes |
 |---|---|

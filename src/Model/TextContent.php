@@ -22,6 +22,8 @@ final class TextContent
         public readonly ?string $format = null,
         public readonly ?string $language = null,
         public readonly array $audiences = [],
+        /** The textscript attribute (ONIX 3.1.3), for the same language in another script: Deva, Latn... */
+        public readonly ?string $script = null,
     ) {}
 
     /**

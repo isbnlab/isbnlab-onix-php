@@ -211,7 +211,7 @@ abstract class Mapper
             return null;
         }
 
-        return new TextContent($type, $text, $format ?? $element->attribute('textformat'), $element->attribute('language'), $audiences);
+        return new TextContent($type, $text, $format ?? $element->attribute('textformat'), $element->attribute('language'), $audiences, $element->attribute('textscript'));
     }
 
     /**

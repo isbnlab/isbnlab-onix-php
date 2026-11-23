@@ -103,7 +103,13 @@ final class EditeurDownload
         if (!\is_string($value)) {
             return null;
         }
-        $date = \DateTimeImmutable::createFromFormat(\DATE_RFC7231, $value);
+
+        return self::parseHttpDate($value);
+    }
+
+    private static function parseHttpDate(string $value): ?\DateTimeImmutable
+    {
+        $date = \DateTimeImmutable::createFromFormat('D, d M Y H:i:s T', $value);
 
         return false === $date ? null : $date;
     }
